@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div id="show" style="margin: 0 auto;width: 900px;">
+        </div>
+    </body>
+</html>
+<script src="jQ.min.js"></script>
+<script>
+//页面加载
+$(function(){
+    //触发ajax
+    $.ajax({
+        type:"get",
+        url:"http://api.k780.com/?app=weather.future&weaId=1&&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json",
+        dataType:"json",
+        success:function(res){
+            if(res.success == 1){
+                var data = res.result;
+                var str = "<table>";
+                str += "<th>城市</th>";
+                str += "<th>日期</th>";
+                str += "<th>温度</th>";
+                str += "<th>风向</th>";
+                str += "<th>操作</th>";
+                 
+                for(var i=0;i<data.length;i++){
+                    str += "<tr><td>"+data[i].citynm+"</td><td>"+data[i].days+"</td><td>"+data[i].temperature+"</td><td>"+data[i].wind+"</td><td><button class='del'>删除</button></td></tr>";
+                }
+                str+="</table>";
+             
+                $("#show").html(str);
+                $("tr:odd").css('background-color','red');
+                $("tr:even").css('background-color','blue');
+                $("tr:eq(0)").css('background-color','');
+                $("table").css('border','1px solid red');
+            }else{
+                console.log('接口请求失败');
+            }
+        }
+    });
+    // 删除
+     
+    $("#show").on('click','.del',function(){
+        var res = confirm('您确定要删除吗？');
+        if(res){
+            $(this).parent().parent().remove();
+        }
+         
+    });
+})
+</script>

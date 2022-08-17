@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function* fuc() {
+        console.log("现在还未遇到第一个yield");
+        console.log("可以随便输出");
+        yield 1;
+        console.log("现在还未遇到第二个yield");
+        console.log("可以随便输出");
+        yield 2;
+        console.log("现在还未遇到第三个yield");
+        console.log("可以随便输出");
+        yield 3
+        console.log("不遇到下一个yield，可以一直输出");
+        console.log("输出完毕");
+
+      }
+      let fn = fuc()
+      console.log(fn.next());
+  console.log(fn.next());
+    </script>
+  </body>
+</html>

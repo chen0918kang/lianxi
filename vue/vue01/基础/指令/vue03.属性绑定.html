@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="../../lib/vue-2.6.14.js"></script>
+
+</head>
+
+<body>
+    < <!-- 希望vue控制下面div，帮我们把数据填充到vue内部 -->
+    <div id="app">
+       <input type="text" v-bind:placeholder="tips">
+   <hr>
+   <img :src="photo" alt="">
+<hr>
+
+
+<div>12+20的结果是: {{ 12+20 }}</div>
+<div> {{tips}}反转的结果是：{{tips.split('').reverse().join('')}} </div>
+<div :title="'box'+index">这是一个有提示文本的div</div>
+   </div>
+
+
+   <!-- 1.导入vue库文件 -->
+   <script src="lib/vue-2.6.14.js"></script>
+
+   <script>
+       // < !--2.创建Vue的实例对象-- >
+       const vm = new Vue({
+           el: '#app',
+           data: {
+               tips: "请输入用户名",
+               photo: "http://www.htmleaf.com/images/logo.svg",
+               index:"2"
+           }
+       })
+   </script>
+</body>
+
+</html>

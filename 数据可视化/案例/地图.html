@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../etcher.js/js/echarts.js"></script>
+    <script src="../etcher.js/js/jQ.min.js"></script>
+    <style>
+      .box1 {
+        width: 700px;
+        height: 500px;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box1">
+    </div>
+    <script>
+      // 获取盒子 
+      // 初始化对象
+      var box = echarts.init(document.querySelector('.box1'));
+      // 地区获取中国地图数据
+      $.get('../json/map/anhui.json', function(ret) {
+        echarts.registerMap('chinaMap', ret)
+        var option = {
+          geo: {
+            type: 'map',
+            map: 'chinaMap',
+            roam: true, // 设置允许缩放以及拖动的效果
+            label: {
+              show: true // 展示标签
+            },
+          }
+        };
+        // 生效
+        box.setOption(option);
+
+      })
+    </script>
+  </body>
+
+</html>

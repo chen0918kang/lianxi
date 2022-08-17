@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	<style type="text/css">
+		div{
+			width: 20vw;
+			height: 20vh;
+			background-color: pink;
+		}
+	</style>
+	</head>
+	<body>
+		<div class = "div">
+			
+		</div>
+		<script type="text/javascript">
+			let div =document.querySelector("div")
+			// 触碰事件
+			div.addEventListener("touchstart",function(){
+				console.log("我触摸到你了");
+			})
+			// 移动事件
+			div.addEventListener("touchmove",function(){
+				console.log("我在你身上滑动");
+			})
+			// 离开事件
+			div.addEventListener("touchend",function(){
+				console.log("我走了哟");
+			})
+		</script>
+	</body>
+</html>

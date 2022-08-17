@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<select class='s1'>
+			<option value="-1">请选择省份</option>
+		</select>
+		<select class='s2'>
+			<option value="-1">请选择市</option>
+		</select>
+		<select class='s3'>
+			<option value="-1" 1ndex=2>请选择县</option>
+		</select>
+		
+		
+		<script type="text/javascript">
+			var sheng = document.querySelector('.s1');
+			var shi = document.querySelector('.s2');
+			var xian = document.querySelector('.s3');
+			// 三维数组
+			var shenglists = ["河南省", "河北省", "江西省"];
+			var shilists = [
+				["郑州市", "洛阳市", "新乡市"],
+				["唐山市", "石家庄市", "廊坊市"],
+				["南昌市", "九江市"]
+			];
+			var xianlists = [
+				[
+					["郑州1县", "郑州2县", "郑州3县", "郑州4县"],
+					["洛阳1县", "洛阳2县", "洛阳3县", "洛阳4县"],
+					["新乡1县", "新乡2县", "新乡3县", "新乡4县"]
+				], //第一层
+				[
+					["唐山1县", "唐山2县", "唐山3县", "唐山4县"],
+					["石家庄1县", "石家庄2县", "石家庄3县", "石家庄4县"],
+					["廊坊1县", "廊坊2县", "廊坊3县", "廊坊4县"]
+				], //第二层
+				[
+					["南昌1县", "南昌2县", "南昌3县", "南昌4县"],
+					["九江1县", "九江2县", "九江3县", "九江4县"]
+				] //第三层
+			];
+		// 函数
+			function tianjia(mubiao, shuzu) {
+				for (var i in shuzu) {
+					var op = new Option(shuzu[i], i);
+					// i输出的是value
+					mubiao.options.add(op);
+				}
+			}
+				// 添加省
+			tianjia(sheng, shenglists);
+			sheng.onchange = function() {
+				shi.options.length = 0;//先清除
+				tianjia(shi, shilists[sheng.value]); //1,2,3那些序号，以此来给市索引值
+				if (sheng.value >= 0) {
+					shi.onchange();
+				} else {
+					xian.options.length = 0;
+				}
+			};
+			shi.onchange = function() {
+				xian.options.length = 0;//先清除
+				tianjia(xian, xianlists[sheng.value][shi.value]);
+			}
+		</script>
+	</body>
+</html>

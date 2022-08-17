@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../尝试/jQ.min.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+
+		<script type="text/javascript">
+	// $.get(地址，参数，函数  );
+	$.get('01测试.json',{},function(res){
+		console.log(res);
+	});
+	// 因为无服务器，使用post失败
+	$.post('01测试.json',{},function(res){
+		console.log(res);
+	})
+	// getJSON返回的需要是json格式
+	$.getJSON('01测试.json',{},function(res){
+		console.log(res);
+	})
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      var books=['《JavaScript前端开发案例教程》','《Node.js核心基础教程》','《HTML5移动Web开发》','《高级办公软件应用》','《计算机网络》','《操作系统》','《数据结构》','《计算机组成原理》'];
+      document.write("输出books数组：");
+      document.write(books);
+      document.write("<br/>");
+      document.write("<br/>");
+      document.write("<br/>");
+      document.write("使用for...in方法的books数组输出：");
+      for(var key in books){
+        document.write("<br/>");
+        document.write(books[key]);
+      }
+      document.write("<br/>");
+      document.write("<br/>");
+      document.write("<br/>");
+    document.write("使用extend方法进行混入继承，kechen数组继承books数组，输出kechen数组：：");
+      var kechen =[];
+      function extend (kechen,books){
+        for(key in books){
+              kechen[key]=books[key]
+        }
+        for(var key in kechen){
+          document.write("<br/>");
+          document.write(kechen[key]);
+        }
+      }
+      extend(kechen,books);
+      
+    </script>
+  </body>
+</html>

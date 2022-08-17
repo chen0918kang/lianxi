@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			class Father {
+				constructor(x, y) {
+					this.x = x;
+					this.y = y;
+				}
+				sum() {
+					document.write(this.x + this.y);
+				}
+				song(){
+					document.write("我是爸");
+				}
+			}
+			class Son extends Father {
+				constructor(x, y) {
+					super(x, y); //不加super的话，其sum方法也会继承给Son，
+					//但是其中的this所指向的值是Father里面的this
+					//super值Father的构造函数    
+					//1先把son中的实参传给son的构造函数，然后通过super将值传个Father中的构造函数
+				}
+				song(){
+					document.write("我是儿子");
+					document.write(super.song() +'的儿子');
+					//super.song()调用父类的song函数
+				}
+				//继承中，如果子类中有这个方法输出子类，要不然查找父类，如果有九输出父类
+			}
+			var son = new Son(2, 5);
+			var son1 = new Son(12, 18);
+			son.sum();
+			document.write("<br/>");
+			son1.sum();
+			document.write("<br/>");
+			document.write("<br/>");
+			var son2 = new Son;
+			son2.song();
+		</script>
+	</body>
+</html>

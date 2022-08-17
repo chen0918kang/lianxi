@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form id="form"></form>
+    <script>
+        var elements = [
+            {
+                tag: 'input',
+                text: '姓名',
+                attr: { type: 'text', name: 'user' },
+                option: null
+            },
+            {
+                tag: 'input',
+                text: '性别',
+                attr: { type: 'radio', name: 'gender' },
+                option: { m: '男', w: '女' }
+            },
+            {
+                tag: 'input',
+                text: '爱好',
+                attr: { type: 'checkbox', name: 'hobby[]' },
+                option: { swimming: '游泳', reading: '读书', running: '跑步' }
+            },
+            {
+                tag: 'select',
+                text: '住址',
+                attr: { name: 'area' },
+                option: { '': '--请选择--', bj: '北京', sh: '上海' }
+            },
+            {
+                tag: 'textarea',
+                text: '自我介绍',
+                attr: { name: 'introduce', rows: '5', clos: '50' },
+                option: null
+            },
+            {
+                tag: 'input',
+                text: '',
+                attr: { type: 'submit', value: '提交' },
+                option: null
+            }
+        ];
+        function FormBuidder(data) {
+            this.data = data;
+            // return this.data;
+        }
+        FormBuidder.prototype.create = function () {
+            var html = '';
+            for (var k in this.data) {
+                var item = { tag: ' ', text: ' ', attr: {}, option: {} };
+                for (var n in this.data[k]) {
+                    item[n] = this.data[k][n];
+                }
+                html += builder.toHTML(item);
+                //  console.log(item);
+            }
+            // console.log(html)
+            return '<table>' + html + '</table>';
+        }
+        var builder = {
+            toHTML: function (obj) {
+                // console.log(obj.attr);
+                var html = this.item[obj.tag](this.attr(obj.attr), obj.option)
+                return '<tr><th>' + obj.text + '</th><td>' + html + '</td></tr>';
+            },
+            attr: function (attr) {
+                var html = '';
+                for (var k in attr) {
+                    html += k + '="' + attr[k] + '"';
+                }
+                return html;
+            },
+            item: {
+                input: function (attr, option) {
+                    // console.log(attr);
+                    var html = '';
+                    if (option === null) {
+                        html += '<input ' + attr + '>'
+                    } else {
+                        for (var k in option) {
+                            html += '<lable><input ' + attr + 'value = "' + k + '"' + '>';
+                            html += option[k] + ' </lable>';
+                        }
+                    }
+                    return html;
+                },
+                select: function (attr, option) {
+                    var html = '';
+                    for (var k in option) {
+                        html += '<option value="' + k + '">' + option[k] + '</option>';
+                    }
+                    return '<select ' + attr + '>' + html + '</select>';
+                },
+                textarea: function (attr) {
+                    return '<textarea ' + attr + '></textarea>';
+                }
+            }
+        };
+        var fn = new FormBuidder(elements);
+        var html = fn.create();
+        document.getElementById('form').innerHTML = html;
+    </script>
+ 
+</body>
+
+</html>

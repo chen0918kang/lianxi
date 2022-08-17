@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 	push(参数1,参数2...)
+		 在末尾添加元素，并返回新的长度
+		pop() 
+		 删除数组最后面的一个元素，并返回它删除的值
+		shift(参数1,参数2...)
+		 向数组开头添加元素，返回新的长度
+		unshift()
+		 删除数组最前面的一个元素，并返回第一个元素的值 
+		 -->
+		<script type="text/javascript">
+			// 筛选数组   把大于10的删除剩下的放入新数组
+			var arr = [1, 7, 5, 42, 15, 34, 5, 8, 6, 9, 2, 41, 22, 11];
+			var arr1 = [];
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i] < 10) {
+					arr1[arr1.length] = arr[i]
+					//这是空数组添加
+					//也可使用arr1.push(arr[i]); 在有元素的数组后面追加
+				}
+			}
+
+			document.write(arr1);
+			document.write("<br/>");
+			document.write("<br/>");
+			document.write("<br/>"); <
+			!--数组排序-- >
+			<
+			!--数组排序-- >
+			<
+			!--数组排序-- >
+			arr.reverse(); //变量名.reverse 是翻转数组
+			document.write(arr);
+			document.write("<br/>");
+			document.write("<br/>");
+
+			var arr2 = [1, 8, 9, 4, 5, 7, 6, ];
+			arr2.sort();
+			//变量名.sort 是冒泡数组 但只适用个位数
+			document.write("<br/>");
+			document.write("<br/>");
+			document.write(arr2);
+
+			var arr4 = [12, 3, 49, 5, 51, 75, 67, 22];
+			arr4.sort();
+			document.write("<br/>");
+			document.write("<br/>");
+			document.write(arr4);
+			// 解决
+			arr4.sort(function(a, b) {
+				return a - b; //升序
+			})
+			document.write("<br/>");
+			document.write(arr4);
+			document.write("<br/>");
+
+
+			var arr5 = [12, 3, 49, 5, 51, 75, 67, 22];
+			arr5.sort(function(a, b) {
+				return b - a; //降序
+			})
+			document.write("<br/>");
+			document.write(arr5);
+			document.write("<br/>");
+		</script>
+
+		<!-- 数组=》》》字符串
+		tostring()   以逗号分割每一项
+			join('分隔符')   -->
+
+
+
+
+
+
+		<!-- concat() 连接两个或多个数组
+		数组1.concat（数组2，数组3，）
+		slice（begin,end） 数组截取
+
+		splice（） 数组删除 （第几个开始，删几个）
+		var arr=['a','b','c','d','e'];
+		arr.splice(2,1) a,b,d,e
+				   2,0,e a,b,e,c,d,e
+				   2,0,e ,f a,b,e,f,c,d,e
+				   0,2,m,n m,n,c,d,e -->
+	</body>
+</html>

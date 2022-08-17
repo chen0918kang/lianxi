@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../../etcher.js/js/jQ.min.js"></script>
+  </head>
+  <body>
+    <button>点我</button>
+    <script>
+      $('button').click(function(){
+        $.ajax({
+          type:'get',
+          url:'http://127.0.0.1:8888/api/seller',
+          success:function(data){
+            console.log(data)
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jQ.min.js" type="text/javascript" charset="utf-8"></script>
+		</head>
+		<body>
+			<button class= "btnget"> 发起带参数请求</button>
+			<script type="text/javascript">
+				$(function(){
+					$('.btnget').on('click',function(){
+						$.get('http://www.liulongbin.top:3006/api/getbooks',{id:1},function(res){
+							console.log(res);
+						})
+					})
+				})
+			</script>
+	</body>
+</html>

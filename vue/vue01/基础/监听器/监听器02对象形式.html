@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="info.uname">
+		</div>
+		<script src="vue-2.6.14.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jQ.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			const vm=new Vue({
+				el:'#app',
+				data:{
+					info:{
+						uname:'acs',
+					}
+					
+				},
+				methods:{
+					
+				},
+				watch:{
+					// info:{
+					// 	handler(newval){
+					// 		console.log(newval);
+					// 	},
+					// 	// 开启自动调用 即页面进去即监听
+					// 	immediate:true,
+					// 	// 开启深度监听，即对象的属性变化了也可以监听改对象
+					// 	deep:true,
+					// }
+					
+				// 单独监听对象的某个子属性
+				'info.uname'(newval){
+					console.log(newval);
+				}
+				
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>NO.3</title>
+		<style></style>
+	</head>
+	<body>
+		<div id="div1">
+			<a href="#">编号1，点击我请弹出1</a>
+			<a href="#">2</a>
+			<a href="#">3</a>
+			<a href="#">4</a>
+		</div>
+		<button>点击增加一个 a 标签</button>
+		<script>
+			var as = document.querySelectorAll('a');
+			var div = document.querySelector('#div1');
+			var btn = document.querySelector('button');
+			for (let i = 0; i < div.children.length; i++) {
+				div.children[i].value = i + 1;
+			}
+			div.addEventListener('click', function(e) {
+				if(e.target.value === undefined){
+					alert(e.target.innerText);
+					
+				}else{
+					alert(e.target.value);
+				}
+				
+			})
+			btn.addEventListener('click', function() {
+				newa = document.createElement('a');
+				newa.innerText = div.children.length + 1;
+				newa.href = '#';
+				div.append(newa);
+			})
+		</script>
+	</body>
+</html>

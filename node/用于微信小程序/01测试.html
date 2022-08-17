@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/jquery/1.10.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+  <button id="btnget">get</button>
+  <button id="btnpost">post</button>
+
+  <script>
+
+    $(function () {
+
+
+      // 测试get
+      $('#btnget').on('click', function () {
+        $.ajax({
+          type: 'GET',
+          url: 'http://127.0.0.1/api/get',
+          data: { name: 'ck', age: 20 },
+          success: function (res) {
+            console.log(res)
+          }
+        })
+
+      })
+
+      // 测试post
+      $('#btnpost').on('click', function () {
+        const acm1 = [];
+        $.ajax({
+          type: 'POST',
+          url: 'http://127.0.0.1/api/post',
+          success: function (res) {
+            console.log(res)
+            acm1 = res;
+          }
+        })
+
+      })
+
+    })
+
+  </script>
+</body>
+
+</html>

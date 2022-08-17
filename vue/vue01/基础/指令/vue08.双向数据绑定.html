@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="../../lib/vue-2.6.14.js"></script>
+
+</head>
+
+<body>
+    <!-- 希望vue控制下面div，帮我们把数据填充到vue内部 -->
+    <div id="app">
+<p>用户的名字是：{{username}} </p>
+        <input type="text" v-model="username">
+        <hr>
+        <input type="text" :value="username">
+        <hr>
+        <select  v-model="city">
+            <option value="">请选择城市</option>
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="3">杭州</option>
+            <option value="4">武汉</option>
+        </select>
+    </div>
+
+
+    <!-- 1.导入vue库文件 -->
+    <script src="lib/vue-2.6.14.js"></script>
+
+    <script>
+// < !--2.创建Vue的实例对象-- >
+               const vm = new Vue({
+                   el: '#app',
+                   data: {
+                       username: " chenkang",
+                       city:""
+                   },
+                  
+
+               })
+    </script>
+</body>
+
+</html>

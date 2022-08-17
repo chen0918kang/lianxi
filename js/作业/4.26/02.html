@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		function shenkaobei(obj){
+		    var old={};
+		    for(var k in obj){
+		        old[k]=(typeof obj[k] === 'object') ? shenkaobei(obj[k]) : obj[k];
+		        // 如果元素为复杂数据类型则采用递归再次遍历  ,要不然赋值给old对象
+				console.log("复制前对象为：",old[k]);
+		        console.log("复制后对象为：",obj[k]);
+		    }
+		     return old;
+		};
+		var books={
+		    bianliang : "aa",
+		    hanshu : function(){
+		        console.log("你好");
+		    },
+		    subject : {name:["《JavaScript前端开发案例教程》",
+		        "《Node.js核心基础教程》",
+		        "《HTML5移动Web开发》"]}
+		};  //books的信息
+		var kaobei = shenkaobei(books); //调用函数深拷贝
+		console.log(books === kaobei);//判断拷贝前后是否===
+		</script>
+	</body>
+</html>
+
+
+        
+

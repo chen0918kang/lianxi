@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.right{
+				color: green;
+			}
+			.wrong{
+				color: red;
+			}
+		</style>
+	</head>
+	<!-- 汉字正则表达式/^[\u4e00-\u9fa5]{2,8}$/-->
+	<!-- 替换  replace
+	 字符串.replace('原字符'，'新字符')
+	 
+	 
+	 -->
+	
+	
+	<body>
+		<input type="text" class = "uname"><span>请输入用户名</span>
+		<input type="text" class="name1"><span class="name2">请输入昵称</span>
+		<script type="text/javascript">
+			var zhengze = /^[a-zA-z0-9_-]{6,16}$/;
+			var uname = document.querySelector('.uname');
+			var span =document.querySelector('span')
+			
+			var nicheng =/^[\u4e00-\u9fa5]{2,8}$/;
+			var name1 = document.querySelector('.name1');
+			var name2 = document.querySelector('.name2');
+			uname.onkeyup = function(){
+				if(zhengze.test(this.value)){
+					console.log("正确的");
+					span.className="right";
+					span.innerHTML = '用户名格式输入正确';
+				}
+				else{
+					console.log("错误的");
+					span.className="wrong";
+					span.innerHTML = '用户名格式输入不正确';
+				}
+			}
+			
+			name1.onblur = function(){
+				if(nicheng.test(this.value)){
+					console.log("正确的");
+					name2.className="right";
+					name2.innerHTML = '昵称格式输入正确';
+				}
+				else{
+					console.log("错误的");
+					name2.className="wrong";
+					name2.innerHTML = '昵称格式输入不正确';
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button type="button">按钮</button>
+		<script type="text/javascript">
+			class Star{
+				constructor(uname,age) {
+				    this.uname = uname;
+					this.age = age;
+					this.btn =document.querySelector("button");
+					this.btn.onclick = this.sing;
+				}
+				sing(){
+					document.write(this.uname);
+				}
+			}
+			var ldh =new  Star("刘德华");
+			
+		</script>
+	</body>
+</html>

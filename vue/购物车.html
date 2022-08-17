@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="./lib/vue-2.6.12.js"></script>
+    <style>
+      table tr td {
+        border: 1px solid brown;
+        width: 100px;
+        height: 50px;
+        border-collapse: collapse;
+      }
+    </style>>
+  </head>
+  <body>
+    <div id="app">
+      <table>
+        <tr>
+          <td></td>
+          <td>商品</td>
+          <td>数量</td>
+          <td>价格</td>
+          <td>小计</td>
+        </tr>
+        <tr v-for='(item,index) in list'>
+          <td>商品1</td>
+          <td>{{item.name}}</td>
+
+          <td>
+            <button @click="shijian01(index)">-</button>
+            {{item.sl}}
+            <button @click="shijian02(index)">+</button>
+          </td>
+          <td>{{item.jiage}}</td>
+          <td>{{item.sl*item.jiage}}</td>
+        </tr>
+       <!-- <tr>
+          <td>商品2</td>
+          <td>{{name2}}</td>
+          <td>
+            <button @click="shijian11">-</button>
+            {{sl2}}
+            <button @click="shijian12">+</button>
+          </td>
+          <td>{{jiage2}}</td>
+          <td>{{this.sl2*this.jiage2}}</td>
+        </tr> -->
+        <tr>
+          <td>总计</td>
+          <td></td>
+          <td>{{this.list[0].sl+this.list[1].sl}}</td>
+          <td></td>
+          <td>{{this.list[0].sl*this.list[0].jiage+this.list[1].sl*this.list[1].jiage}}</td>
+        </tr>
+
+
+      </table>
+    
+   
+    
+    </div>
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          list:[
+            {
+              name:'苹果',
+              sl:1,
+              jiage:10,
+              xiaoji:0
+            },
+            {
+              name:'香蕉',
+              sl:1,
+              jiage:5,
+              xiaoji:0
+            }
+          ]
+          
+        },
+        methods:{
+          shijian01(e){
+            this.list[index].sl--
+
+          },
+          shijian02(index){
+             this.list[index].sl++
+          },
+          
+         
+        }
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="../../lib/vue-2.6.14.js"></script>
+
+</head>
+
+<body>
+    <!-- 希望vue控制下面div，帮我们把数据填充到vue内部 -->
+    <div id="app">
+        <div v-if="type==='A'">优秀</div>
+        <div v-else-if="type==='B'">良好</div>
+        <div v-else-if="type==='C'">一般</div>
+        <div v-else="type==='D'">及格</div>
+        
+    </div>
+
+
+    <!-- 1.导入vue库文件 -->
+    <script src="lib/vue-2.6.14.js"></script>
+
+    <script>
+// < !--2.创建Vue的实例对象-- >
+               const vm = new Vue({
+                   el: '#app',
+                   data: {
+                       type:"A",
+                   }
+               })
+    </script>
+</body>
+
+</html>

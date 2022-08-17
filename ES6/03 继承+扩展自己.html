@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			class Father {
+				constructor(x, y) {
+					this.x = x;
+					this.y = y;
+				}
+				sum() {
+					document.write(this.x + this.y);
+				}
+			}
+			class Son extends Father{
+				constructor(x, y) {
+//利用super调用父类的构造函数，super必须在子类this前面
+                      super(x,y);
+					  this.x=x;
+					  this.y=y;
+				}
+				subtract(){
+				document.write(this.x-this.y);
+				}
+			}
+			var son = new Son(5,4);
+			son.subtract();
+			document.write("<br/>");
+			document.write("<br/>");
+			son.sum();
+		</script>
+	</body>
+</html>

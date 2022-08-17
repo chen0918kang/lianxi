@@ -1,0 +1,77 @@
+7<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		button {
+			margin-right: 50px;
+		}
+	</style>
+</head>
+
+<body>
+	请输入第一个值：<input type="" name="" id="a1" placeholder="请输入第一个值" clss="zhi1" />
+	<br>
+	请输入第二个值：<input type="" name="" id="a2" placeholder="请输入第二个值" clss="zhi2" />
+	<br>
+	<button class="an1">+</button>
+	<button class="an2">-</button>
+	<button class="an3">*</button>
+	<button class="an4">/</button>
+	<br>
+	得到的结果是：<input type="" name="" id="a3" value="" placeholder="得到的结果是" clss="zhi3" />
+<script type="text/javascript">
+let zhi1 = document.getElementById("a1");
+let zhi2 = document.getElementById("a2");
+let zhi3 = document.getElementById("a3");
+
+let an1= document.querySelector(".an1");
+let an2= document.querySelector(".an2");
+let an3= document.querySelector(".an3");
+let an4= document.querySelector(".an4");
+	
+	
+		an1.addEventListener('click',function(){
+			if(zhi2.value!=''&&zhi1.value!=''){
+			let num=parseInt(zhi1.value)+parseInt(zhi2.value);
+			zhi3.value = num;
+			console.log(num)
+			}else{
+				alert("请完整填入信息！");
+			}
+		})
+		an2.addEventListener('click',function(){
+			if(zhi2.value!=''&&zhi1.value!=''){
+			let num=parseInt(zhi1.value)-parseInt(zhi2.value);
+			zhi3.value = num;
+			console.log(num)
+			}else{
+				alert("请完整填入信息！");
+			}
+		})
+		an3.addEventListener('click',function(){
+			if(zhi2.value!=''&&zhi1.value!=''){
+			let num=parseInt(zhi1.value)*parseInt(zhi2.value);
+			zhi3.value = num;
+			console.log(num)
+			}else{
+				alert("请完整填入信息！");
+			}
+		})
+		an4.addEventListener('click',function(){
+			if(zhi2.value!=''&&zhi1.value!=''){
+			let num=parseInt(zhi1.value)/parseInt(zhi2.value);
+			zhi3.value = num;
+			console.log(num)
+			}else{
+				alert("请完整填入信息！");
+			}
+		}) 
+	
+</script>
+
+</body>
+
+</html>

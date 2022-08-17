@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+</head>
+
+<body>
+	<div id="app">
+		<p>count的值为：{{count}}</p>
+		<button @click="jiayi">+1</button>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+	<script type="text/javascript">
+		const vm = new Vue({
+			el: '#app',
+			data: {
+				count: 0
+			},
+			methods: {
+				jiayi(e) {
+
+					const bgcolor = e.target.style.backgroundColor
+					e.target.style.backgroundColor = bgcolor === 'red' ? '' : 'red'
+					this.count += 1
+				}
+			}
+
+		})
+	</script>
+</body>
+
+</html>

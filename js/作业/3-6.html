@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[83,75,65,59.5,92]
+			var sum = 0;
+			var max=0;
+			var min=100;
+				
+			for(var i =0;i<arr.length;i++){
+		sum+=arr[i];
+		if(arr[i]>max){
+			max=arr[i]
+		}
+		if(arr[i]<min){
+			min=arr[i]
+		}
+			}
+			var pingjunfen = sum/arr.length;
+			document.write("五门成绩分别是："+arr);
+			document.write("<br>");
+			document.write("总分是："+sum);
+			document.write("<br>");
+			document.write("平均分是："+pingjunfen);
+			document.write("<br>");
+			document.write("最高分："+max);
+			document.write("<br>");
+			document.write("最低分："+min);
+		</script>
+	</body>
+</html>

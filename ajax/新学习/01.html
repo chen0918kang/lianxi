@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../尝试/jQ.min.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<table border="1" width="800" class="datas">
+			<thead>
+				<tr>
+					<th>学号</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>年龄</th>
+				</tr>
+			</thead>
+		</table>
+		<button type="button" class="btn">打印</button>
+		
+		
+		<script type="text/javascript">
+		// 参数
+		// type:请求方式GET/POST
+		// url:请求地址
+		// async:是否异步，默认是true
+		// data:发送到服务器的数据
+		// dataType:预期服务器返回的数据类型
+		// contentType:设置请求头
+		// success:请求成功时调用此函数
+		// error:请求失败时调用此函数
+		let btn = document.querySelector('.btn');
+		btn.addEventListener('click',function(){
+			$.ajax({
+				type:'get',
+				url: '01测试.json',
+				dataType:"json", //预期返回的数据类型。如果是json格式，在接受到返回值是会自动封装成json对象
+				success: function(datas){
+					for(var i in datas){
+						var data ='<tr><td>'+datas[i].id+'</td><td>'
+						+datas[i].name+'</td><td>'+datas[i].sex+
+						'</td><td>'+datas[i].age+'</td></tr>';
+						$('.datas').append(data);
+				} 
+			}
+		});
+		});
+		</script>
+		
+	</body>
+</html>

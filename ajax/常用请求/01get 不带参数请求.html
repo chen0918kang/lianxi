@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jQ.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button class= "btnget"> 发起不带参数请求</button>
+		<script type="text/javascript">
+			$(function(){
+				$('.btnget').on('click',function(){
+					$.get('http://218.0.7.182:10002/',function(res){
+						console.log(res);
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

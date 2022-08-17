@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				margin-top: 50px;
+				margin-left: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button" class="button">点我为元素添加红色双线边框</button>
+		<div class="div"></div>
+		<script type="text/javascript">
+			button = document.querySelector('.button');
+			div = document.querySelector('.div');
+			button.addEventListener('click',function(){
+				div.style.border='solid 5px red';
+				div.style.outline = '5px solid black'
+			})
+		</script>
+	</body>
+</html>

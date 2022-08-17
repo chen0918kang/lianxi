@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="../../lib/vue-2.6.14.js"></script>
+
+</head>
+
+<body>
+    <!-- 希望vue控制下面div，帮我们把数据填充到vue内部 -->
+    <div id="app">
+        <p>count的值是{{ count }}</p>
+<!-- v-on：简写为@ -->
+<button @click="add(1,$event)">+n</button>
+<button v-on:click="sub(1,$event)">-n</button>
+    </div>
+
+
+    <!-- 1.导入vue库文件 -->
+    <script src="lib/vue-2.6.14.js"></script>
+    <script>
+        // < !--2.创建Vue的实例对象-- >
+        // vm===this
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                count:0,
+            },
+            methods:{
+                add(n,e){ 
+                    this.count +=1;
+                  
+                    if(this.count%2==0){
+                        e.target.style.backgroundColor = 'red';
+                    }else{
+                        e.target.style.backgroundColor = '';
+                    }
+                },
+                sub(n,e){
+                    this.count -=n;
+                    if(this.count%2==0){
+                        e.target.style.backgroundColor = 'red';
+                    }else{
+                        e.target.style.backgroundColor = '';
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

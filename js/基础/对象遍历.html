@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		// 1  创造对象
+			var obj = {name:'ck',age:18,aihao:"读书，看报"}
+			
+			document.write(obj.name);
+			document.write("<br/>");
+			document.write(obj.age);
+			document.write("<br/>");
+			document.write(obj.aihao);
+			// 2  创造对象
+			var obj1 = new Object();
+			obj1.uname = "陈康";
+			obj1.age = "19";
+			obj1.aihao = "读书，看报";
+			
+			document.write("<br/>");
+			document.write("<br/>");
+			document.write(obj1.uname);
+			document.write("<br/>");
+			document.write(obj1.age);
+			document.write("<br/>");
+			document.write(obj1.aihao);
+			
+			// 3  创造对象
+		function star(uname,age,sex,aihao){
+			this.uname = uname;
+			this.age = age;
+			this.sex = sex;
+			this.aihao = aihao;
+		}
+		
+		var ldh = new star("刘德华",18,"男","唱歌");
+		var zxc = new star("周星驰",18,"男","演戏");
+		
+		document.write("<br/>");
+		document.write("<br/>");
+		document.write(ldh.uname);
+		document.write("<br/>");
+		document.write(ldh.age);
+		document.write("<br/>");
+		document.write(ldh.sex);
+		document.write("<br/>");
+		document.write(ldh.aihao);
+		document.write("<br/>");
+		document.write("<br/>");
+		document.write(zxc.uname);
+		document.write("<br/>");
+		document.write(zxc.age);
+		document.write("<br/>");
+		document.write(zxc.sex);
+		document.write("<br/>");
+		document.write(zxc.aihao);
+		document.write("<br/>");
+		document.write("<br/>");
+		document.write("<br/>");
+		// 遍历对象
+		for( k in ldh){
+			document.write(k);
+			//k是属性名
+			document.write("<br/>");
+			
+			document.write(ldh[k]);  //object[k] 给属性值
+		document.write("<br/>");
+		}
+		
+		
+		</script>
+	</body>
+</html>

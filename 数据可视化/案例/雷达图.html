@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../etcher.js/js/echarts.js"></script>
+    <style>
+      .box1 {
+        width: 700px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+
+    </div>
+
+    <script>
+      // 获取盒子 
+      // 初始化对象
+      var box = echarts.init(document.querySelector('.box1'));
+      // 配置项
+      var option = {
+  // title: {
+  //   text: 'Basic Radar Chart'
+  // },
+  // legend: {
+  //   data: ['Allocated Budget', 'Actual Spending']
+  // },
+  radar: {
+    // shape: 'circle',
+    indicator: [
+      { name: '年龄', max: 6500 },
+      { name: '地位', max: 16000 },
+      { name: '身价 Technology', max: 30000 },
+      { name: '排名', max: 38000 },
+      { name: 'Development', max: 52000 },
+      { name: 'Marketing', max: 25000 }
+    ],
+    shape:'circle'
+  },
+  series: [
+    {
+      name: 'Budget vs spending',
+      type: 'radar',
+      areaStyle:{},
+      data: [
+        {
+          value: [4200, 3000, 20000, 35000, 50000, 18000],
+          name: 'Allocated Budget'
+        },
+        {
+          value: [5000, 14000, 28000, 26000, 42000, 21000],
+          name: 'Actual Spending'
+        }
+      ]
+    }
+  ]
+};
+      // 生效
+      box.setOption(option);
+    
+    </script>
+  </body>
+</html>

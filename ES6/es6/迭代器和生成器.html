@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			function* objectEnteries(obj){
+				//propkeys 把obj键保存到其中
+				const propkeys = Object.keys(obj);
+				for(const prokey of propkeys){
+					yield [prokey,obj[prokey]]
+					//prokey是键   obj[prokey]是值
+				
+				}
+				
+			}
+			
+			const obj = {
+				name:'陈康',
+				age: 18
+			}
+			obj[Symbol.iterator] = objectEnteries;
+			console.log(obj);
+			
+			for(let [key,value] of objectEnteries(obj)) {
+				console.log(`${key}:${value}`);
+			}
+			
+			
+		</script>
+	</body>
+</html>

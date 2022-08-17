@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script type="text/javascript">
+			function getrandom(min,max){
+				return Math.floor(Math.random()*(max-min+1)+min);
+			}
+			document.write(getrandom(0,20));
+			  
+			  document.write("<br/>");
+			  
+			// 随机点名
+			var arr = ["张三","李四","王五","邓六","张1","李2","王3","邓4"];
+			document.write(arr[getrandom(0,arr.length-1)]);
+		</script>
+	</body>
+</html>

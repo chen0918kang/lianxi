@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function pick(obj){
+				let result = Object.create(null);
+				for(let i =1;i<arguments.length;i++){
+					result[arguments[i]]=obj[arguments[i]]
+				}
+				return result;
+			}
+			let book = {
+				title:'es6的教程',
+				author:'小马哥',
+				year:2020
+			}
+  let bookdate =pick(book,'author','year');
+  console.log(bookdate);
+
+function pick1(obj,...keys){
+				let result = Object.create(null);
+				for(let i =0;i<keys.length;i++){
+					result[keys[i]]=obj[keys[i]]
+				}
+				return result;
+			}
+
+
+let book1 = {
+				title:'es6的教程',
+				author:'小马哥',
+				year:2020
+			}
+  let bookdate1 =pick1(book,'author','year');
+  console.log(bookdate1);
+
+
+
+
+
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = "HelloWorld";
+			document.write("1获取字符串长度:");
+			document.write(str.length);
+			
+			document.write('<br>');
+			document.write("索引位置为5：");
+			document.write(str.charAt(5));
+			
+			document.write('<br>');
+			document.write("o首次出现的位置:");
+			document.write(str.indexOf('o'));
+			
+			document.write('<br>');
+			document.write("o最后出现的位置:");
+			document.write(str.lastIndexOf('o'));
+			
+			document.write('<br>');
+			document.write("截取5到最后的内容");
+			document.write(str.substring(5));
+			
+			document.write('<br>');
+			document.write("截取5到7的内容");
+			document.write(str.substr(5,3));
+			
+			document.write('<br>');
+			document.write("截取5到最后的内容");
+			document.write(str.substring(5));
+			
+			document.write('<br>');
+			document.write("截取5到最后的内容");
+			document.write(str.substr(5,2));
+			
+			document.write('<br>');
+			document.write("将字符串小写");
+			document.write(str.toLowerCase());
+			
+			document.write('<br>');
+			document.write("将字符串大写");
+			document.write(str.toUpperCase());
+			
+			document.write('<br>');
+			document.write("使用l切割字符串");
+			document.write(str.split('l'));
+			
+			document.write('<br>');
+			document.write("使用l切割字符串,限制最多切割3次");
+			document.write(str.split('l',3));
+			
+			document.write('<br>');
+			document.write("替换字符串");
+			document.write(str.replace('World','JacaScript'));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box"></div>
+		
+		<script type="text/javascript">
+			const box = document.querySelector('.box');
+			let id = 1,
+				name = '小马哥';
+				let html1str = `<ul>
+			<li>
+				<p id=${id}>${name}</p>
+			</li>
+		</ul>`;
+			box.innerHTML = html1str;
+		</script>
+	</body>
+</html>

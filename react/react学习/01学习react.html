@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- 引入文件 -->
+    <script src="../react学习/node_modules/react/umd/react.development.js"></script>
+    <script src="../react学习/node_modules/react-dom/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  <script>
+    // 2.创建reac元素、
+    // 参数1：元素名称
+    // 参数2：元素属性
+    // 参数3：元素的子节点
+    const title = React.createElement('h1',null,'hello')
+    // 3渲染reac元素
+    // 参数1：要渲染的react元素》
+    // 参数2：挂载点
+    ReactDOM.render(title,document.querySelector('#root'))
+  </script>
+  
+  </body>
+</html>

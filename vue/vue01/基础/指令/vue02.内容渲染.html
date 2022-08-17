@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="../../lib/vue-2.6.14.js"></script>
+
+</head>
+
+<body>
+    <!-- 希望vue控制下面div，帮我们把数据填充到vue内部 -->
+    <div id="app">
+        <P v-text="username"></P>
+        <P v-text="age"></P>
+        <P v-text="sex"></P>
+        <!-- //原内容被覆盖 -->
+        <hr>
+        <P>姓名：{{ username }}</P>
+        <P>年龄：{{ age }} </P>
+        <P>性别：{{ sex }} </P>
+        <hr>
+        <div v-text="info"></div>
+        <div>{{ info }}</div>
+        <!-- 上面两种无法正确理解标签，只能理解纯文本 -->
+        <div v-html="info"></div>
+<div>{{ number + 1 }}</div>
+
+
+    </div>
+
+    <!-- 1.导入vue库文件 -->
+    <script src="lib/vue-2.6.14.js"></script>
+
+    <script>
+        // < !--2.创建Vue的实例对象-- >
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                username: " chenkang",
+                age: 18,
+                sex: "男",
+                info: '<h4 style="color:red; font-width:500;">今天学习内容渲染指令</h4>',
+                number:20
+            }
+        })
+    </script>
+</body>
+
+</html>
