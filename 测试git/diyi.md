@@ -1,3 +1,2 @@
 使用 vs code 中 git
-版本一
-版本 2
+连接 GitHub
